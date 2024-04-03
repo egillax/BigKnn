@@ -152,6 +152,7 @@ public class LuceneKnn {
 	}
 
 	public double[][] getPredictions() {
+		pool.shutdown();
 		try {
 			pool.awaitTermination(10, TimeUnit.SECONDS);
 		} catch (InterruptedException e1) {
